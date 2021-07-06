@@ -5,3 +5,4 @@ build/*
 /input.data
 /output_cpp.data
 /output_py.data
+secure/*
