@@ -3,6 +3,6 @@ build/*
 /cmake-build-debug/
 /venv/
 /input.data
-/output_cpp.data
-/output_py.data
+/output.data
 secure/*
+*.exe

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 int LineLength = 4094;
-const int LinesCount = 16384; // 128 * 1024;
+const int LinesCount = 128 * 1024;
 const string InputFilename = "input.data";
 const string Alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 var random = new Random();
