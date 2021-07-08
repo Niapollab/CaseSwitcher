@@ -5,6 +5,7 @@
 #include <fstream>
 #include <algorithm>
 #include <chrono>
+#include "Switcher.h"
 
 const size_t NUMBER_OF_THREADS = 4;
 
@@ -13,20 +14,7 @@ using namespace std;
 inline string process_line(string& str)
 {
     for (char& ch : str)
-    {
-        if (isdigit(ch))
-        {
-            int d = ch - '0';
-            if (d < 9)
-                ch = '0' + d + 1;
-            else
-                ch = '0';
-        }
-        else if (isupper(ch))
-            ch = tolower(ch);
-        else
-            ch = toupper(ch);
-    }
+        ch = switch_char(ch);
 
     return str;
 }
@@ -43,6 +31,7 @@ int main()
     const char* OUTPUT_FILENAME = "output_cpp.data";
     
     chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+    init_switcher();
     try
     {
         cout << "Load input data" << endl;
